@@ -10,7 +10,9 @@ namespace Battleships
 		{
 			Battlefield battlefield = new Battlefield(10, 10);
 
-			battlefield.Build(new SubmarineArmada(battlefield.FieldLength, battlefield.FieldHeight));
+			var fieldBuildStrategy = new OneDeckArmada(battlefield.FieldLength, battlefield.FieldHeight);
+
+			battlefield.Build(fieldBuildStrategy);
 
 			battlefield.Show();
 		}

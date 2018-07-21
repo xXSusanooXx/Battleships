@@ -7,6 +7,6 @@ namespace Battleships.Abstracts
 {
 	public abstract class FieldUnit
     {
-		public FieldCell[] Cells { get; set; }
+		public virtual FieldCell[] Cells { get; set; }
     }
 }

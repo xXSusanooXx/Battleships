@@ -5,4 +5,11 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Models\Ships\battleship.cs" />
+    <Compile Remove="Models\Ships\Cruiser.cs" />
+    <Compile Remove="Models\Ships\Destroyer.cs" />
+    <Compile Remove="Models\Ships\Submarine.cs" />
+  </ItemGroup>
+
 </Project>

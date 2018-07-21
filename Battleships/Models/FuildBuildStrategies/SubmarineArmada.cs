@@ -1,15 +1,16 @@
 ﻿using Battleships.Abstracts;
+using Battleships.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Battleships.Models.FuildBuildStrategies
 {
-	public class SubmarineArmada : FieldBuildStrategy
+	public class OneDeckArmada : FieldBuildStrategy
 	{
-		public SubmarineArmada(int fieldLength, int fieldHeight) : base(fieldLength, fieldHeight)
-		{ }
+		public OneDeckArmada(int fieldLength, int fieldHeight) : base(fieldLength, fieldHeight) { }
 
+		//adding submarines to 0,2,4,6... rows
 		public override FieldCell[,] Build()
 		{
 			FieldCell[,] field = new FieldCell[FieldHeight, FieldLength];
@@ -21,7 +22,7 @@ namespace Battleships.Models.FuildBuildStrategies
 					field[i, j] = new FieldCell(j, i);
 					if (i % 2 == 0)
 					{
-						field[i, j].FieldUnit = new Submarine(field[i, j]);
+						field[i, j].FieldUnit = new Ship(DeckType.OneDeck, new FieldCell[] { field[i, j] });
 					}
 				}
 			}
