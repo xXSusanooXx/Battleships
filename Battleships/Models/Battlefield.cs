@@ -10,6 +10,7 @@ namespace Battleships.Models
 		private FieldCell[,] fieldcells;
 
 		private int _fieldLength;
+		private int _fieldHeight;
 
 		public int FieldLength
 		{
@@ -23,8 +24,6 @@ namespace Battleships.Models
 				_fieldLength = value;
 			}
 		}
-
-		private int _fieldHeight;
 
 		public int FieldHeight
 		{

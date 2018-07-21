@@ -5,11 +5,43 @@ using System.Text;
 
 namespace Battleships.Abstracts
 {
-    public abstract class FieldBuildStrategy
-    {
-		public int FieldLength { get; protected set; }
-		public int FieldHeight { get; protected set; }
+	public abstract class FieldBuildStrategy
+	{
+		private int _fieldLength;
+		private int _fieldHeight;
+
+		public int FieldLength
+		{
+			get { return _fieldLength; }
+			private set
+			{
+				if (value < 1)
+				{
+					throw new ArgumentOutOfRangeException("Length cannot be negative");
+				}
+				_fieldLength = value;
+			}
+		}
+
+		public int FieldHeight
+		{
+			get { return _fieldHeight; }
+			private set
+			{
+				if (value < 1)
+				{
+					throw new ArgumentOutOfRangeException("Length cannot be negative");
+				}
+				_fieldHeight = value;
+			}
+		}
+
+		public FieldBuildStrategy(int length, int height)
+		{
+			this.FieldLength = length;
+			this.FieldHeight = height;
+		}
 
 		public abstract FieldCell[,] Build();
-    }
+	}
 }

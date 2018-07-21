@@ -7,11 +7,36 @@ namespace Battleships.Models
 {
 	public class FieldCell
 	{
-		public int X { get; set; }
-		public int Y { get; set; }
-		public FieldUnit FieldUnit { get; set; }
-		public bool IsDead { get; set; }
+		private int _x;
+		private int _y;
 
+		public int X
+		{
+			get { return _x; }
+			private set
+			{
+				if (value < 1)
+				{
+					throw new ArgumentOutOfRangeException("Length cannot be negative");
+				}
+				_x = value;
+			}
+		}
+
+		public int Y
+		{
+			get { return _y; }
+			private set
+			{
+				if (value < 1)
+				{
+					throw new ArgumentOutOfRangeException("Value cannot be negative");
+				}
+				_y = value;
+			}
+		}
+
+		public FieldUnit FieldUnit { get; set; }
 
 		public FieldCell(int x, int y)
 		{
