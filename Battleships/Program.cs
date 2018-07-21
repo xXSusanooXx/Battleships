@@ -1,12 +1,18 @@
-﻿using System;
+﻿using Battleships.Models;
+using Battleships.Models.FuildBuildStrategies;
+using System;
 
 namespace Battleships
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-        }
-    }
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			Battlefield battlefield = new Battlefield(10, 10);
+
+			battlefield.Build(new SubmarineArmada(battlefield.FieldLength, battlefield.FieldHeight));
+
+			battlefield.Show();
+		}
+	}
 }
