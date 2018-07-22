@@ -1,7 +1,5 @@
 ﻿using Battleships.Abstracts;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Battleships.Models
 {
@@ -15,7 +13,7 @@ namespace Battleships.Models
 			get { return _x; }
 			private set
 			{
-				if (value < 1)
+				if (value < 0)
 				{
 					throw new ArgumentOutOfRangeException("Length cannot be negative");
 				}
@@ -28,7 +26,7 @@ namespace Battleships.Models
 			get { return _y; }
 			private set
 			{
-				if (value < 1)
+				if (value < 0)
 				{
 					throw new ArgumentOutOfRangeException("Value cannot be negative");
 				}

@@ -1,12 +1,9 @@
 ﻿using Battleships.Enums;
 using Battleships.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Battleships.Abstracts
 {
-    public class Ship: FieldUnit
+	public class Ship: FieldUnit
     {
 		public DeckType DeckType { get; protected set; }
 

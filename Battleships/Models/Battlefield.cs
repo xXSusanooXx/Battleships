@@ -1,7 +1,5 @@
 ﻿using Battleships.Abstracts;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Battleships.Models
 {
@@ -17,7 +15,7 @@ namespace Battleships.Models
 			get { return _fieldLength; }
 			private set
 			{
-				if (value <= 0)
+				if (value < 0)
 				{
 					throw new ArgumentOutOfRangeException("Length cannot be negative");
 				}
@@ -30,7 +28,7 @@ namespace Battleships.Models
 			get { return _fieldHeight; }
 			private set
 			{
-				if (value <= 0)
+				if (value < 0)
 				{
 					throw new ArgumentOutOfRangeException("Height cannot be negative");
 				}
@@ -52,11 +50,35 @@ namespace Battleships.Models
 
 		public void Show()
 		{
-			for (var i = 0; i < FieldHeight; i++)
+			int aCode = 'A';
+
+			for (var i = 0; i < FieldHeight + 1; i++)
 			{
-				for (var j = 0; j < FieldLength; j++)
+				for (var j = 0; j < FieldLength + 1; j++)
 				{
-					if (fieldcells[i, j].FieldUnit == null)
+					if (i == 0 && j == 0)
+					{
+						Console.Write("   ");
+						continue;
+					}
+					else if (i != 0 && j == 0)
+					{
+						Console.Write(i + " ");
+
+						if (i < 10)
+						{
+							Console.Write(" ");
+						}
+
+						continue;
+					}
+					else if (i == 0 && j != 0 )
+					{
+						Console.Write(((char)aCode++) + " ");
+						continue;
+					}
+
+					if (fieldcells[i - 1, j - 1].FieldUnit == null)
 					{
 						Console.Write(0 + " ");
 					}

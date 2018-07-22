@@ -1,7 +1,5 @@
 ﻿using Battleships.Models;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Battleships.Abstracts
 {
@@ -15,7 +13,7 @@ namespace Battleships.Abstracts
 			get { return _fieldLength; }
 			private set
 			{
-				if (value < 1)
+				if (value < 0)
 				{
 					throw new ArgumentOutOfRangeException("Length cannot be negative");
 				}
@@ -28,7 +26,7 @@ namespace Battleships.Abstracts
 			get { return _fieldHeight; }
 			private set
 			{
-				if (value < 1)
+				if (value < 0)
 				{
 					throw new ArgumentOutOfRangeException("Length cannot be negative");
 				}

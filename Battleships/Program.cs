@@ -1,6 +1,5 @@
 ﻿using Battleships.Models;
 using Battleships.Models.FuildBuildStrategies;
-using System;
 
 namespace Battleships
 {
@@ -10,7 +9,7 @@ namespace Battleships
 		{
 			Battlefield battlefield = new Battlefield(10, 10);
 
-			var fieldBuildStrategy = new OneDeckArmada(battlefield.FieldLength, battlefield.FieldHeight);
+			var fieldBuildStrategy = new StandardBattleshipFleet(battlefield.FieldLength, battlefield.FieldHeight);
 
 			battlefield.Build(fieldBuildStrategy);
 
